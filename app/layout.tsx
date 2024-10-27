@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google"
 import "./globals.css";
 import { metainfo } from "@/lib/const";
 import { cn } from "@/lib/utils";
+import { Analytics } from "@vercel/analytics/react"
 import Providers from "@/components/providers/Providers";
 import Dchach from "@/components/ui/overlays/Dchach";
 
@@ -47,6 +48,7 @@ export default function RootLayout({
             {children}
           </main>
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
