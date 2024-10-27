@@ -43,7 +43,7 @@ export default function RootLayout({
       >
         <Providers>
           <Dchach />
-          <main className="mx-auto w-full max-w-[900px] pt-0 md:pt-12 text-indigo-200">
+          <main className="mx-auto w-full max-w-[900px] pt-0 md:pt-12 p-4 text-indigo-200">
             {children}
           </main>
         </Providers>
