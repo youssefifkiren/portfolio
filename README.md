@@ -1,2 +1,8 @@
-# Youssef's Portfolio site
-[youssefifkiren.dev](https://youssefifkiren.dev)
+## Youssef's portfolio
+
+Open [youssefifkiren.dev](http://youssefifkiren.dev)
+
+## Tech stack
+- Nextjs
+- React
+- Tailwindcss
