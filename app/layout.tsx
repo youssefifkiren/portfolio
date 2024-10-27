@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cn(monsterrat.variable, 'antialiased overscroll-y-none bg-stone-800 selection:bg-teal-400/90 selection:text-white')}
+        className={cn(monsterrat.variable, 'antialiased bg-stone-800 selection:bg-teal-400/90 selection:text-white')}
       >
         <Providers>
           <Dchach />
