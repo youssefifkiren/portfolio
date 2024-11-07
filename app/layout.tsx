@@ -24,11 +24,17 @@ export async function generateMetadata(): Promise<Metadata> {
       siteName: metainfo.name,
       type: 'website',
       url: `https://${metainfo.siteDomain}`,
+      images: [
+        {
+          url: `https://${metainfo.siteDomain}/og-large-logo.png`,
+          alt: metainfo.name
+        }
+      ]
     },
     twitter: {
       creator: '@y0ssef_tlg',
       card: "summary_large_image",
-    },
+    }
   }
 }
 
