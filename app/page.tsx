@@ -13,7 +13,7 @@ export default function Home() {
         <span>
           <code>Yet another developer</code>
         </span>
-        <p className="text-lg">
+        <p className="md:text-lg">
           {metainfo.description}
         </p>
         <span>

@@ -2,7 +2,7 @@
 const Dchach = () => {
   return (
     <svg
-      className="pointer-events-none fixed isolate z-30 opacity-75 mix-blend-soft-light"
+      className="pointer-events-none fixed isolate z-30 opacity-80 mix-blend-soft-light"
       width="100%"
       height="100%"
     >
