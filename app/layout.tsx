@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/react"
 import Providers from "@/components/providers/Providers";
 import Dchach from "@/components/ui/overlays/Dchach";
 import GlowLines from "@/components/ui/overlays/GlowLines";
+import Navbar from "@/components/ui/overlays/Navbar";
 
 const monsterrat = Montserrat({
   weight: ['100', '400', '500', '700'],
@@ -52,6 +53,7 @@ export default function RootLayout({
         <Providers>
           <GlowLines />
           <Dchach />
+          <Navbar />
           <main className="mx-auto w-full max-w-[900px] pt-0 md:pt-12 p-4 text-indigo-200">
             {children}
           </main>
