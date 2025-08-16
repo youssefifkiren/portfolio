@@ -20,14 +20,24 @@ export default function Home() {
         <div className="flex space-x-4 mb-5">
           {
             socials.map((s) => (
-              <Link key={s.name} className='border rounded-lg hover:bg-teal-100 hover:text-slate-600 hover:border-slate-400 p-1' href={s.link} target="_blank">
+              <Link
+                key={s.name}
+                className='border rounded-lg p-1 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-teal-400/20 hover:bg-teal-100 hover:text-slate-600 hover:border-slate-400'
+                href={s.link}
+                target="_blank"
+              >
                 {s.icon}
               </Link>
             ))
           }
         </div>
-        <div className="mt-3">
-          <code>The website is still under construction</code>
+        <div className="mt-6 p-3 border border-teal-400/30 rounded-lg bg-teal-900/10 backdrop-blur-sm">
+          <div className="flex items-center space-x-2 text-teal-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span className="font-mono text-sm">The website is still under construction</span>
+          </div>
         </div>
       </section>
     </>

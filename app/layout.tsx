@@ -55,7 +55,9 @@ export default function RootLayout({
           <Dchach />
           <Navbar />
           <main className="mx-auto w-full max-w-[900px] pt-0 md:pt-12 p-4 text-indigo-200">
-            {children}
+            <div className="transition-opacity duration-300 ease-in-out">
+              {children}
+            </div>
           </main>
         </Providers>
         <Analytics />
