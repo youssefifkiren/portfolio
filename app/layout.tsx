@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google"
+import "highlight.js/styles/github-dark.css";
 import "./globals.css";
 import { metainfo } from "@/lib/const";
 import { cn } from "@/lib/utils";
