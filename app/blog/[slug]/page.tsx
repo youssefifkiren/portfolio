@@ -1,12 +1,23 @@
+import { Metadata } from 'next';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { type Frontmatter } from '@/lib/types';
 import { CodeBlock } from '@/components/ui/code-block';
-import { compileMDX, MDXRemote } from 'next-mdx-remote/rsc';
+import { compileMDX } from 'next-mdx-remote/rsc';
 import remarkGfm from 'remark-gfm';
 import rehypePrettyCode from 'rehype-pretty-code';
 import MdImg from '@/components/blog/MdImg';
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  return {
+    title: "Blog",
+    description: "My public personal notebook where I share latest posts, projects, and ideas."
+  }
+}
 
 export default async function BlogPostPage({
   params,

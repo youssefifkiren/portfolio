@@ -1,8 +1,16 @@
+import { Metadata } from 'next';
 import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import { type Frontmatter } from '@/lib/types';
 import { Card } from '@/components/ui/card';
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Blog",
+    description: "My public personal notebook where I share latest posts, projects, and ideas."
+  }
+}
 
 export default async function BlogPage() {
   const postsDir = path.join(process.cwd(), 'content/blog');

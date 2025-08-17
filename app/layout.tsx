@@ -47,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(monsterrat.variable, 'antialiased bg-stone-800 selection:bg-teal-400/90 selection:text-white')}
       >
