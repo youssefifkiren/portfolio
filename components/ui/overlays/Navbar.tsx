@@ -18,6 +18,9 @@ const Navbar = () => {
           <Link href="#contact" className="text-teal-100 hover:text-teal-300 transition-colors">
             Contact
           </Link>
+          <Link href="/blog" className="text-teal-100 hover:text-teal-300 transition-colors">
+            Blog
+          </Link>
         </div>
         <a
           href={`mailto:${metainfo.email}`}
