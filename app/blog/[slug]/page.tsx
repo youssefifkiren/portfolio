@@ -11,9 +11,10 @@ import MdImg from '@/components/blog/MdImg';
 export default async function BlogPostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const postPath = path.join(process.cwd(), 'content/blog', `${params.slug}.mdx`);
+  const { slug } = await params;
+  const postPath = path.join(process.cwd(), 'content/blog', `${slug}.mdx`);
   const mdxSource = await readFile(postPath, 'utf-8');
 
   // const frontmatter = {} as Frontmatter;
