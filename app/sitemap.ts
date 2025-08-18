@@ -11,6 +11,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.8
     }));
 
+    const latestPostDate =
+    posts.length > 0
+      ? new Date(
+          Math.max(...posts.map((p) => new Date(p.frontmatter.date).getTime()))
+        )
+      : new Date();
     return [
         {
             url: "https://youssefifkiren.dev",
@@ -20,11 +26,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
         {
             url: `${baseUrl}/blog`,
-            lastModified: new Date(),
+            lastModified: latestPostDate,
             changeFrequency: 'weekly',
             priority: 0.9
         },
         ...blogUrls,
-
     ]
 }
