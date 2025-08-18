@@ -1,37 +1,24 @@
 import { Metadata } from 'next';
-import { readFile } from 'node:fs/promises';
-import path from 'node:path';
-import { type Frontmatter } from '@/lib/types';
-import { CodeBlock } from '@/components/ui/code-block';
-import { compileMDX } from 'next-mdx-remote/rsc';
-import remarkGfm from 'remark-gfm';
-import rehypePrettyCode from 'rehype-pretty-code';
-import MdImg from '@/components/blog/MdImg';
+import { getBlogPost } from '@/lib/blog';
 
-export default async function BlogPostPage({
-  params,
-}: {
+type pageProps = {
   params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
-  const postPath = path.join(process.cwd(), 'content/blog', `${slug}.mdx`);
-  const mdxSource = await readFile(postPath, 'utf-8');
+}
 
-  // const frontmatter = {} as Frontmatter;
-  const { frontmatter, content } = await compileMDX<Frontmatter>({
-    source: mdxSource,
-    options: {
-      parseFrontmatter: true,
-      mdxOptions: {
-        remarkPlugins: [remarkGfm],
-        rehypePlugins: [[rehypePrettyCode, { theme: "github-dark", keepBackground: false }]],
-      }
-    },
-    components: {
-      pre: CodeBlock,
-      MdImg,
-    }
-  });
+export async function generateMetadata({ params }: pageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const {frontmatter} = await getBlogPost(slug);
+
+  return {
+    title: frontmatter.title,
+    description: frontmatter.description,
+  }
+}
+
+export default async function BlogPostPage({ params }: pageProps) {
+  const { slug } = await params;
+  const {frontmatter, content} = await getBlogPost(slug);
+
 
 
 
@@ -55,7 +42,6 @@ export default async function BlogPostPage({
         </div>
       </div>
       {content}
-      
     </div>
   );
 }
